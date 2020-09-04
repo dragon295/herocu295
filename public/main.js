@@ -39,7 +39,7 @@ function createUser() {
 function upDateuser(id) {
     $.ajax({
         type: "PATCH",
-        url: `http://localhost:3000/users/${id}`,
+        url: `https://tda123.herokuapp.com/users/${id}`,
         data: {
             name: $("#name").val(),
             birthday: $("#birthday").val(),
