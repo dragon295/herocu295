@@ -1,6 +1,6 @@
 $.ajax({
     type: "GET",
-    url: "http://localhost:3000/users",
+    url: "https://tda123.herokuapp.com//users",
     dataType: "json",
     success: function (response) {
        hienThiuser(response);
@@ -23,7 +23,7 @@ function hienThiuser (arr) {
 function createUser() {
     $.ajax({
         type: "POST",
-        url: "http://localhost:3000/users",
+        url: "https://tda123.herokuapp.com//users",
         data: {
             name: $("#name").val(),
             birthday: $("#birthday").val(),
