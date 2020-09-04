@@ -52,7 +52,7 @@ function upDateuser(id) {
         }
     });
 }
-function saveUser () {
+function saveUser() {
 let vt = window.location.href.indexOf("=");
 let id = window.location.href.slice(vt + 1);
 upDateuser(id);
