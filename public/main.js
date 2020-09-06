@@ -51,35 +51,8 @@ function upDateuser(id) {
             window.location.href= "/"
         }
     });
-}
-function saveUser() {
-let vt = window.location.href.indexOf("=");
-let id = window.location.href.slice(vt + 1);
-upDateuser(id);
-}
 
-function confirmDelete(id) {
-    $("#exampleModal").modal("show");
-    $('#confirm-delete').click(function () {
-        deleteUser(id);
-        $("#exampleModal").modal("hide");
-    });
-  }
-  
-function deleteUser(id) {
-    $.ajax({
-        type: "DELETE",
-        url: `https://tda123.herokuapp.com/users/${id}`,
-        dataType: "json",
-        success: function () {
-            $(`#tr-${id}`).remove();
-        },
-    });
-}
-
-
-function createUser() {
-    let isValid = true;
+     let isValid = true;
     
     const openDiv = '<div id="name-error" class="error text-danger font-weight-light font-italic mt-1">';
     const closeDiv = '</div>';
@@ -117,3 +90,28 @@ function createUser() {
 
     return isValid;
 }
+function saveUser() {
+let vt = window.location.href.indexOf("=");
+let id = window.location.href.slice(vt + 1);
+upDateuser(id);
+}
+
+function confirmDelete(id) {
+    $("#exampleModal").modal("show");
+    $('#confirm-delete').click(function () {
+        deleteUser(id);
+        $("#exampleModal").modal("hide");
+    });
+  }
+  
+function deleteUser(id) {
+    $.ajax({
+        type: "DELETE",
+        url: `https://tda123.herokuapp.com/users/${id}`,
+        dataType: "json",
+        success: function () {
+            $(`#tr-${id}`).remove();
+        },
+    });
+}
+
